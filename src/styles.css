@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light mode: Slate base with Indigo accent */
+  --background: oklch(0.985 0.002 247);
+  --foreground: oklch(0.145 0.014 247);
+  --card: oklch(0.995 0 0);
+  --card-foreground: oklch(0.145 0.014 247);
+  --popover: oklch(0.995 0 0);
+  --popover-foreground: oklch(0.145 0.014 247);
+  --primary: oklch(0.55 0.22 262);
+  --primary-foreground: oklch(0.985 0.002 247);
+  --secondary: oklch(0.96 0.003 247);
+  --secondary-foreground: oklch(0.205 0.014 247);
+  --muted: oklch(0.96 0.003 247);
+  --muted-foreground: oklch(0.55 0.014 247);
+  --accent: oklch(0.96 0.003 247);
+  --accent-foreground: oklch(0.205 0.014 247);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.90 0.003 247);
+  --input: oklch(0.90 0.003 247);
+  --ring: oklch(0.55 0.22 262);
+  --radius: 0.75rem;
+
+  /* Glass effect vars */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* Tailcast Theme Tokens - Adaptive */
+  --color-primaryColor: rgb(79, 70, 229);
+  --color-secondaryColor: rgb(6, 182, 212);
+  --color-primaryText: oklch(0.145 0.014 247);
+  --color-heroText: oklch(0.205 0.014 247);
+  --color-secondaryText: oklch(0.55 0.014 247);
+  --color-bgDark1: oklch(0.985 0.002 247);
+  --color-bgDark2: oklch(0.96 0.003 247);
+  --color-bgDark3: oklch(0.90 0.003 247);
+  --color-bgDark3Hover: oklch(0.85 0.003 247);
+  --color-mainBorder: rgba(0, 0, 0, 0.1);
+  --color-mainBorderDarker: rgba(0, 0, 0, 0.15);
+  --color-mainBorderSubtler: rgba(0, 0, 0, 0.05);
+  --color-mainBorderFaintest: rgba(0, 0, 0, 0.03);
+
+  /* New adaptive tokens */
+  --color-bgDark3HoverLight: oklch(0.85 0.003 247);
+  --color-bgDarkTransparent: rgba(255, 255, 255, 0.7);
+  --color-bgDarkTransparentDarker: rgba(0, 0, 0, 0.05);
+  --color-bgDarkTransparentLighter: rgba(255, 255, 255, 0.8);
+  --color-bgDark1Lighter: oklch(0.99 0 0);
+}
+
+.dark {
+  /* Dark mode: Deep base with Indigo accent */
+  --background: oklch(0.12 0.01 250);
+  --foreground: oklch(0.985 0.002 247);
+  --card: oklch(0.17 0.012 250);
+  --card-foreground: oklch(0.985 0.002 247);
+  --popover: oklch(0.17 0.012 250);
+  --popover-foreground: oklch(0.985 0.002 247);
+  --primary: oklch(0.65 0.24 262);
+  --primary-foreground: oklch(0.12 0.01 250);
+  --secondary: oklch(0.22 0.012 250);
+  --secondary-foreground: oklch(0.985 0.002 247);
+  --muted: oklch(0.22 0.012 250);
+  --muted-foreground: oklch(0.65 0.01 247);
+  --accent: oklch(0.22 0.012 250);
+  --accent-foreground: oklch(0.985 0.002 247);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.26 0.012 250);
+  --input: oklch(0.26 0.012 250);
+  --ring: oklch(0.65 0.24 262);
+
+  /* Glass effect vars - dark */
+  --glass-bg: rgba(30, 30, 35, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* New adaptive tokens - dark */
+  --color-bgDark3HoverLight: rgb(43, 44, 50);
+  --color-bgDarkTransparent: rgb(23 24 27 / 0.7);
+  --color-bgDarkTransparentDarker: rgb(0 0 0 / 0.5);
+  --color-bgDarkTransparentLighter: rgb(40 41 46 / 0.7);
+  --color-bgDark1Lighter: rgb(24, 26, 29);
+
+  /* Tailcast Theme Tokens - Dark overrides */
+  --color-primaryText: rgb(255, 255, 255);
+  --color-heroText: rgb(230, 230, 230);
+  --color-secondaryText: rgb(174, 178, 183);
+  --color-bgDark1: rgb(23, 24, 27);
+  --color-bgDark2: rgb(30, 31, 35);
+  --color-bgDark3: rgb(40, 41, 46);
+  --color-bgDark3Hover: rgb(47, 48, 54);
+  --color-mainBorder: rgba(255, 255, 255, 0.1);
+  --color-mainBorderDarker: rgba(255, 255, 255, 0.05);
+  --color-mainBorderSubtler: rgba(255, 255, 255, 0.15);
+  --color-mainBorderFaintest: rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --font-sans: 'Outfit', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Tailcast Theme Tokens */
+  --color-primaryColor: var(--color-primaryColor);
+  --color-secondaryColor: var(--color-secondaryColor);
+  --color-primaryText: var(--color-primaryText);
+  --color-heroText: var(--color-heroText);
+  --color-secondaryText: var(--color-secondaryText);
+  --color-bgDark1: var(--color-bgDark1);
+  --color-bgDark2: var(--color-bgDark2);
+  --color-bgDark3: var(--color-bgDark3);
+  --color-bgDark3Hover: var(--color-bgDark3Hover);
+  --color-mainBorder: var(--color-mainBorder);
+  --color-mainBorderDarker: var(--color-mainBorderDarker);
+  --color-mainBorderSubtler: var(--color-mainBorderSubtler);
+  --color-mainBorderFaintest: var(--color-mainBorderFaintest);
+  --color-bgDark3HoverLight: var(--color-bgDark3HoverLight);
+  --color-bgDarkTransparent: var(--color-bgDarkTransparent);
+  --color-bgDarkTransparentDarker: var(--color-bgDarkTransparentDarker);
+  --color-bgDarkTransparentLighter: var(--color-bgDarkTransparentLighter);
+  --color-bgDark1Lighter: var(--color-bgDark1Lighter);
+  --color-mainBorderSubtle: rgb(55 65 81 / 0.3);
+  --color-quoteIconColor: rgb(178, 184, 205);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Peach gradient text */
+.text-gradient-primary {
+  background: linear-gradient(135deg, oklch(0.55 0.22 262), oklch(0.7 0.18 190));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
+/* Custom scrollbar styling */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted-foreground);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Swiper slideshow customizations */
+.swiper-pagination {
+  bottom: 100px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: 4px;
+  background: white;
+}
+
+/* --- Tailcast Reusable Utilities --- */
+
+/* Layout & Typography */
+.content-container {
+  @apply mx-auto w-11/12 px-4 md:w-4/5 lg:w-[62.5rem] xl:w-[68.75rem] 2xl:w-[75rem];
+}
+.block-title {
+  @apply text-primaryText text-3xl font-bold tracking-normal;
+}
+.block-big-title {
+  @apply text-primaryText text-4xl font-bold tracking-normal xl:text-5xl;
+}
+.block-subtitle {
+  @apply text-secondaryColor text-xs font-bold tracking-wider uppercase;
+}
+.content-title {
+  @apply text-primaryText text-lg font-bold tracking-normal;
+}
+.content-text-white {
+  @apply text-primaryText text-base leading-relaxed;
+}
+.content-text-gray {
+  @apply text-base text-gray-400;
+}
+
+/* Borders */
+.main-border-gray {
+  @apply border-mainBorder border border-solid;
+}
+.main-border-gray-darker {
+  @apply border-mainBorderDarker border border-solid;
+}
+
+/* Buttons */
+.contained-button {
+  @apply bg-primaryColor text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition hover:bg-[#7274f3];
+}
+.outlined-button {
+  @apply text-primaryText border-mainBorder bg-bgDark2 hover:bg-bgDark3 cursor-pointer rounded-xl border border-solid text-sm;
+}
+
+/* Cards */
+.card {
+  @apply bg-bgDark3/40 border-mainBorderFaintest hover:border-mainBorderSubtler hover:bg-bgDark3HoverLight/70 rounded-2xl border transition-all duration-500;
+}
+.card-colored-hover {
+  @apply hover:border-primaryColor/25 hover:bg-bgDark3HoverLight;
+}
+
+/* Images & Glows */
+.image-border {
+  @apply border-mainBorderSubtler rounded-xl border border-solid;
+}
+.image-glow-border {
+  position: relative;
+}
+.image-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+  padding: 1px;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgb(100, 97, 115), transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgb(100, 97, 115), transparent 50%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+.image-glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 0.75rem;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    linear-gradient(to right, rgba(100, 97, 115, 0.2), transparent 50%) top / 100% 8px no-repeat,
+    linear-gradient(to bottom, rgba(100, 97, 115, 0.2), transparent 50%) left / 8px 100% no-repeat,
+    linear-gradient(to left, rgba(100, 97, 115, 0.2), transparent 50%) bottom / 100% 8px no-repeat,
+    linear-gradient(to top, rgba(100, 97, 115, 0.2), transparent 50%) right / 8px 100% no-repeat;
+  filter: blur(8px);
+}
+
+.dark .image-glow-border::after {
+  background:
+    linear-gradient(to right, rgba(100, 97, 115, 0.6), transparent 50%) top / 100% 8px no-repeat,
+    linear-gradient(to bottom, rgba(100, 97, 115, 0.6), transparent 50%) left / 8px 100% no-repeat,
+    linear-gradient(to left, rgba(100, 97, 115, 0.6), transparent 50%) bottom / 100% 8px no-repeat,
+    linear-gradient(to top, rgba(100, 97, 115, 0.6), transparent 50%) right / 8px 100% no-repeat;
+}
+
+/* Badges */
+.badge-primary {
+  @apply bg-primaryColor/15 text-secondaryColor rounded-full px-3 py-1 text-xs;
+}
+.badge-neutral {
+  @apply bg-bgDark3 text-secondaryText rounded-full px-3 py-1 text-xs;
+}
+
+/* Inputs */
+.form-input {
+  @apply border-mainBorderSubtler text-primaryText hover:border-primaryColor focus:border-primaryColor w-full rounded-xl border bg-transparent px-4 py-3 placeholder-gray-500 transition outline-none;
+}
+
+/* Animations */
+.hero-fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeIn 0.5s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -50px); }
+  66% { transform: translate(-20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
+}
+
+.sf-fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.sf-fade-in.is-visible {
+  opacity: 1;
+}
+
+/* ── Marquee (Testimonials) ───────────────────────────────────────────── */
+@keyframes marqueeLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 60s linear infinite;
+}
+.animate-marquee-right {
+  animation: marqueeRight 60s linear infinite;
+}
+
+
+/* --- Shape Dividers (V-Curve Style) --- */
+.shape-divider-bottom-hero {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.shape-divider-bottom-hero svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 200px;
+}
+
+.shape-divider-bottom-1665343298 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.shape-divider-bottom-1665343298 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 200px;
+}
+
+.shape-divider-bottom-1665696614 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.shape-divider-bottom-1665696614 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+  transform: rotateY(180deg);
+}
+
+.shape-divider-top-1665696661 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.shape-divider-top-1665696661 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+  transform: rotateY(180deg);
+}
+
+/* Global Scrollbar - Adaptive */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bgDark1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bgDark3);
+  border-radius: 5px;
+  border: 2px solid var(--color-bgDark1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primaryColor);
+}
